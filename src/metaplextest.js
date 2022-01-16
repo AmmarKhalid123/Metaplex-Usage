@@ -99,7 +99,7 @@ export default function MetaplexTest(){
       wallet: wlt,
       uri: arv,
       maxSupply: 1
-    })
+    });
     console.log(s);
     console.log(s.edition.toBase58());
     console.log(s.metadata.toBase58());
@@ -220,7 +220,10 @@ export default function MetaplexTest(){
       signTransaction: signT,
       signAllTransactions: signAllT
     };
-    console.log(wlt);
+    console.log(new BN(1000, 10));
+    let ppp = new BN(1000, 10);
+    console.log(ppp.toNumber())
+    console.log(wlt, );
     let a = await actions.addTokensToVault({
       connection,
       wallet: wlt,
@@ -228,7 +231,7 @@ export default function MetaplexTest(){
       nfts: [{
         tokenAccount: new PublicKey('4ky2NDiJXncQ78doTbfQnSoW85Ec1S7jp7fUih6cGoS2'),
         tokenMint: new PublicKey('E9R53q7kjsZ18zLBX8xkLTZPBweZm9waLTSSVeqKy9NF'),
-        amount: new BN(1000, 10)
+        amount: new BN(1.1, 10)
       }]
     });
     console.log(a);
